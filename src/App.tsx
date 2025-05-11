@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Chat from './components/Chat';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const [username, setUsername] = useState<string>('');
+  const [room, setRoom] = useState<string>('');
+  const [showChat, setShowChat] = useState<boolean>(false);
+
+  const joinRoom = (): void => {
+    if (username !== '' && room !== '') {
+      setShowChat(true);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!showChat ? (
+        <div className="joinChatContainer">
+          <h3>Join A Chat</h3>
+          <input
+            type="text"
+            placeholder="Name..."
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Room ID..."
+            onChange={(e) => setRoom(e.target.value)}
+          />
+          <button onClick={joinRoom}>Join Room</button>
+        </div>
+      ) : (
+        <Chat username={username} room={room} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
