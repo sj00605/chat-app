@@ -13,6 +13,7 @@
     "@types/socket.io-client": "^3.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "firebase": "^11.7.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
@@ -48,6 +49,5 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {}
+  "license": "ISC"
 }

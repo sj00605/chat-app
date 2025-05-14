@@ -48,3 +48,30 @@
 .joinChatContainer button:hover {
   background: #3a67e0;
 }
+
+.error-message {
+  color: #ff4444;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.switch-auth {
+  border: none;
+  color: #4d7cfe;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration: underline;
+  width: 100%;
+  font-weight: bold;
+}
+
+.logout-button {
+  background-color: #ff4444 !important;
+  margin-top: 10px;
+}
+
+.logout-button:hover {
+  background-color: #cc0000 !important;
+}
